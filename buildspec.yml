@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+
+  pre_build:
+    commands:
+      - python3.12 -m venv ~/.venv
+      - source ~/.venv/bin/activate
+      - make install
+      - make lint
+      - make test
+  
+  
