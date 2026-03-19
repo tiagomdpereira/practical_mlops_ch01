@@ -7,8 +7,8 @@ phases:
   pre_build:
     commands:
       - python3.12 -m venv ~/.venv
-      - . ~/.venv/bin/activate
-      - pip install --upgrade pip && pip install -r requirements.txt
-      - pylint --disable=R,C calculator.py
-      - python -m pytest -vv --cov=calculator test_calculator.py
-      - black *.py
+      - ~/.venv/bin/python -m pip install --upgrade pip
+      - ~/.venv/bin/python -m pip install -r requirements.txt
+      - ~/.venv/bin/python -m pylint --disable=R,C calculator.py
+      - ~/.venv/bin/python -m pytest -vv --cov=calculator test_calculator.py
+      - ~/.venv/bin/python -m black --check *.py
